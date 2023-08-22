@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/*  sidebar accroding */
+.s-a-s{
+    box-sizing: border-box;
+    display: flex !important;
+    overflow: hidden;
+    height: auto;
+    transition-property: height, padding;
+    transition-duration:500ms;
+}
