@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const PageTwo = () => {
+
+    const [addmodal ,setAddmodal] = useState(false);
+
     return (
         <>
             <div className="col-span-3 2xl:col-span-4">
-                <div className="card gap-0 lg:z-10 2xl:p-card-spacing lg:p-3 left-sidebar-aside z-[3] lg:w-[280px] sticky min-lg:top-0 sm:w-[269px] lg:fixed lg:h-[100vh]">
-                    <button className="justify-end hidden mb-3 lg:flex left-sidebar-toggle absolute right-[-35px] top-0 bg-gray-light dark:bg-sidebar-dark2 p-2 ">
-                    {" "}
+                <div className={`card gap-0 lg:z-10 2xl:p-card-spacing lg:p-3 left-sidebar-aside z-[3] lg:w-[280px] sticky min-lg:top-0 sm:w-[269px] lg:fixed lg:h-[100vh] ${addmodal==true ? 'left-hide-show-sidebar' : ''} `}>
+                    <button   onClick={()=>setAddmodal(!addmodal)} className="justify-end hidden mb-3 lg:flex left-sidebar-toggle absolute right-[-35px] top-0 bg-gray-light dark:bg-sidebar-dark2 p-2 ">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width={24}
@@ -198,7 +200,8 @@ const PageTwo = () => {
                 <div className="flex flex-col gap-2 card h-[548px] custom-scroll overflow-auto">
                     <div className="flex justify-between items-center">
                     <h5 className="text-title font-bold mb-2">Todo List</h5>
-                    <svg
+                    <svg  
+                        onClick={()=>setAddmodal(!addmodal)}
                         xmlns="http://www.w3.org/2000/svg"
                         width={24}
                         height={24}
